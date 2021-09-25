@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/svg.css" />
+    <title>SVG Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Taylor Dawson: SVG Fun!</h1>
+        <a href="index.html">Home</a>
+      </header>
+
+      <svg width="600" height="400">
+        <rect class="background" x="10%" y="10%" />
+        <polygon
+          class="triangle"
+          x="100"
+          y="1000"
+          points="300,40 540,360 60,360"
+        />
+
+        <ellipse class="ellipse" cx="300" cy="140" rx="200" ry="100" />
+
+        <circle class="black-fill" r="130" cx="50%" cy="50%" />
+        <svg width="260" height="130" x="170" y="62">
+          <circle class="top-half" r="110" cx="50%" cy="100%" />
+        </svg>
+
+        <svg width="260" height="130" x="170" y="205">
+          <circle class="bottom-half" r="110" cx="50%" cy="0%" />
+        </svg>
+
+        <svg width="260" height="130" x="169" y="134">
+          <circle class="black-fill" r="40" cx="50%" cy="50%" />
+        </svg>
+
+        <svg width="260" height="130" x="169" y="134">
+          <circle class="middle-circle" r="30" cx="50%" cy="50%" />
+        </svg>
+      </svg>
+    </div>
+  </body>
+</html>

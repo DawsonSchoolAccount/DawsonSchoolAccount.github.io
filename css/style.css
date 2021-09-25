@@ -1,0 +1,43 @@
+nav a {
+  padding: 0 2.4rem;
+}
+
+.old-pic-container {
+  width: 30%;
+}
+
+.old-pic-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.fam-pic-container {
+  width: 50%;
+}
+
+.fam-pic-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  margin: 0 10%;
+}
+
+.bio-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-me-section {
+  width: 70%;
+}
+
+.school-box {
+  width: 30%;
+  /* width: 50%; */
+}
+
+.school-pic {
+  width: 70%;
+}

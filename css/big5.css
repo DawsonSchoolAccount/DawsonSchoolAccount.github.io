@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Calibri;
+}
+
+h1 {
+  width: 100%;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+header a {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-left: 50%;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.section-graph {
+  width: 50%;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.header {
+  width: 50%;
+  padding: 0 3.2rem;
+  margin: 1.2rem auto;
+}
+
+.graph {
+  display: none;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 5fr;
+  gap: 1rem;
+}
+
+.graph-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bars {
+  display: grid;
+  row-gap: 3rem;
+  /* align-items: center; */
+  /* grid-template-rows: repeat(5, 1fr); */
+}
+
+.bar {
+  fill: #1e9937;
+  opacity: 0.7;
+  font-size: 24pt;
+  font-weight: bold;
+  height: 5rem;
+}
+
+.bar--O {
+  width: 270px;
+}
+
+.bar--C {
+  width: 385px;
+}
+
+.bar--E {
+  width: 95px;
+}
+
+.bar--A {
+  width: 375px;
+}
+
+.bar--N {
+  width: 365px;
+}
+
+.percentage-text {
+  fill: #1e9937;
+  font-size: 2.4rem;
+}
+
+.background-line {
+  fill: #aaa;
+  opacity: 0.4;
+  width: 2px;
+  height: 97%;
+}
+
+.x-axis {
+  grid-column: 2 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.ylabel {
+  font-size: 25pt;
+  fill: gray;
+  font-weight: bold;
+  text-anchor: end;
+}
+
+.xlabel {
+  fill: #aaa;
+  font-size: 14pt;
+  text-anchor: middle;
+}
+
+.text-test {
+  width: 50%;
+}

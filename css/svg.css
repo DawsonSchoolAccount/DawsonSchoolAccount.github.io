@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  width: 100%;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+header a {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-left: 25%;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.header {
+  width: 50%;
+  padding: 0 3.2rem;
+  margin: 1.2rem auto;
+}
+
+.background {
+  fill: rgb(151, 0, 0);
+  opacity: 0.7;
+  height: 80%;
+  width: 80%;
+}
+
+.black-fill {
+  fill: #000;
+}
+
+.top-half {
+  fill: rgb(221, 0, 0);
+}
+
+.bottom-half {
+  fill: #fff;
+}
+
+.middle-circle {
+  fill: #fff;
+}
+
+.triangle {
+  fill: rgb(185, 137, 230);
+}
+
+.ellipse {
+  fill: rgb(209, 174, 57);
+}
