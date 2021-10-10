@@ -14,13 +14,6 @@ h1 {
   margin: 0 auto;
 }
 
-header a {
-  width: 100%;
-  padding: 0 1rem;
-  margin: 0 auto;
-  margin-left: 25%;
-}
-
 .container {
   max-width: 120rem;
   padding: 0 3.2rem;
