@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .invalid__entry{
+        color: orange;
+      }
+      .no__entry{
+        color: red;
+      }
+      .output{
+        margin-top: 1%;
+      }
+    </style>
+    <title>Form Assignment</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Form Validation</h1>
+
+        <nav>
+          <a href="index.html">Main Page</a>
+          <a href="introduction.html">Introduction</a>
+          <a href="big5.html">Big 5 Personality Score</a>
+          <a href="svg.html">SVG</a>
+          <a href="calculator.html">Calculator</a>
+          <a href="form.html">Form</a>
+          <a href="d3event.html">D3 Event</a>
+        </nav>
+        </nav>
+      </header>
+
+      <form class="form" id="myForm">
+        Username: 
+        <input type="text" name="username" value=""><br><br>
+
+        Email:
+        <input type="text" name="email" value=""><br><br>
+
+        Phone Number:
+        <input type="text" name="phone" value=""><br><br>
+
+        Enter password:
+        <input type="password" name="enterPass" value=""><br><br>
+
+        Confirm password:
+        <input type="password" name="confirmPass" value=""><br><br>
+
+        Gender:<br>
+        Male:
+        <input type="radio" name="gender" value="">
+        Female:
+        <input type="radio" name="gender" value=""> 
+        Other:
+        <input type="radio" name="gender" value=""><br><br>
+
+        Birthday:
+        <div class="birthday">
+          <select id="birthday__month">
+            <option value="blank"></option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+
+          <select id="birthday__day"></select>
+          <select id="birthday__year"></select>
+        </div>
+
+        <br>
+
+        Favorite music genre:<br>
+        Pop
+        <input type="checkbox" name="music" value="">
+        Hip-hop
+        <input type="checkbox" name="music" value="">
+        Jazz
+        <input type="checkbox" name="music" value="">
+        Rock
+        <input type="checkbox" name="music" value="">
+        Classical
+        <input type="checkbox" name="music" value="">
+        Country
+        <input type="checkbox" name="music" value="">
+        <br><br>
+
+        <input type="button" value="Submit" onclick="getInput()">
+        <input type="button" value="Clear" onclick="clearInput()">
+        <div class="output">
+        </div>
+      </form>
+    </div>
+    <script src="js/form.js"></script>
+  </body>
+</html>
