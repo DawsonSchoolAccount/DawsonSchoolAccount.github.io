@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/calculator.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <script defer src="js/calculator.js"></script>
     <title>Calculator Assignment</title>
   </head>
   <body>
-    <div class="container">
+    <div class="calc__container">
       <header>
-        <h1>PAGE TITLE</h1>
+        <h1>Calculator</h1>
 
         <nav>
           <a href="index.html">Main Page</a>
@@ -24,6 +24,141 @@
         </nav>
         </nav>
       </header>
+
+      <div class="table center">
+        <script>
+          //Create table
+          document.write("<table>");
+          document.write(
+            `<tr class="center">
+              <th>x</th>
+              <th>op</th>
+              <th>y</th>
+              <th>result</th>
+              </tr>`
+          );
+  
+          //Start calculator loop
+          let continueLoop = true;
+          let min = Number.MAX_SAFE_INTEGER;
+          let max = Number.MIN_SAFE_INTEGER;
+          let numRows = 0;
+          let total = 0;
+          do {
+            //Get input values
+            let xValue = prompt("Please enter a value for x:");
+            if (xValue == null) {
+              break;
+            }
+  
+            let operator = prompt("Please enter an operator:");
+            if (operator == null) {
+              break;
+            }
+  
+            let yValue = prompt("Please enter a value for y:");
+            if (yValue == null) {
+              break;
+            }
+  
+            //Print table row
+            document.write("<tr>");
+            document.write(
+              `<td>${xValue}</td>
+            <td>${operator}</td>
+            <td>${yValue}</td>`
+            );
+  
+            //Assign correct result. If any incorrect values were entered,
+            //Print correct error message
+            let result;
+            xValue = parseFloat(xValue);
+            yValue = parseFloat(yValue);
+
+            if (
+              operator !== "+" &&
+              operator !== "-" &&
+              operator !== "*" &&
+              operator !== "/" &&
+              operator !== "%"
+            ) {
+              result = "Computation Error";
+            } else if (isNaN(yValue) || isNaN(xValue)) {
+              result = "Invalid numeric input";
+            } else {
+              switch (operator) {
+                case "+":
+                  result = xValue + yValue;
+                  break;
+                case "-":
+                  result = xValue - yValue;
+                  break;
+                case "*":
+                  result = xValue * yValue;
+                  break;
+                case "/":
+                  result = xValue / yValue;
+                  break;
+                default:
+                  result = xValue % yValue;
+              }
+
+              //Increment num rows
+              numRows++;
+
+              //Check for new max/min
+              if(result > max){
+                max = result;
+              }
+
+              if(result < min){
+                min = result;
+              }
+
+              //Update running total
+              total += result;
+  
+            }
+            document.write(`<td>${result}</td>`);
+            document.write("</tr>");
+          } while (continueLoop);
+  
+          //Finish table
+          document.write("</table>");
+
+          //Define max/min/avg/total table
+          document.write("<table>");
+          document.write(
+            `<tr class="center">
+              <th>Min</th>
+              <th>Max</th>
+              <th>Average</th>
+              <th>Total</th>
+              </tr>`
+          );
+
+          //Only fill in rows if there were rows with valid data in original table
+          if(numRows > 0){
+            document.write("<tr>");
+            document.write(
+              `<td>${min}</td>
+            <td>${max}</td>
+            <td>${(total / numRows).toFixed(2)}</td>
+            <td>${total}</td>`
+            );
+            
+            document.write("</tr>");
+          }
+
+          document.write("</table>");
+  
+        </script>
+      </div>
     </div>
+
+    
+
+
+    <!-- <script src="js/calculator.js"></script> -->
   </body>
 </html>
