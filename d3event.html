@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let body = d3.select("body");
+      body.append("span").attr("class", "icon__span");
+      body.append("div").attr("class", "in").html("In: ");
+      body.append("div").attr("class", "out").html("Out: ");
+      body.append("div").attr("class", "mouse").html("Mouse X: , Y: ");
+
+      //Add each social media icon
+      let span = d3.select(".icon__span");
+      span
+        .append("img")
+        .attr("src", "images/twitter.png")
+        .attr("alt", "Twitter icon")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("class", "twitter")
+        .attr("name", "Twitter")
+        .attr("data-url", "https://twitter.com/")
+        .attr("data-IconPath", "images/twitter.png")
+        .attr("data-altIconPath", "images/twitter-black.png")
+        .on("mouseenter", mouseInIcon)
+        .on("mouseleave", mouseOutIcon)
+        .on("dblclick", iconDoubleClick)
+        .on("mousedown", iconMouseDown)
+        .on("mouseup", iconMouseUp);
+      span
+        .append("img")
+        .attr("src", "images/facebook.jpg")
+        .attr("alt", "Facebook icon")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("class", "facebook")
+        .attr("name", "Facebook")
+        .attr("data-url", "https://www.facebook.com/")
+        .attr("data-IconPath", "images/facebook.jpg")
+        .attr("data-altIconPath", "images/facebook-black.jpg")
+        .on("mouseenter", mouseInIcon)
+        .on("mouseleave", mouseOutIcon)
+        .on("dblclick", iconDoubleClick)
+        .on("mousedown", iconMouseDown)
+        .on("mouseup", iconMouseUp);
+      span
+        .append("img")
+        .attr("src", "images/reddit.png")
+        .attr("alt", "Reddit icon")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("class", "reddit")
+        .attr("name", "Reddit")
+        .attr("data-url", "https://www.reddit.com/")
+        .attr("data-IconPath", "images/reddit.png")
+        .attr("data-altIconPath", "images/reddit-black.svg")
+        .on("mouseenter", mouseInIcon)
+        .on("mouseleave", mouseOutIcon)
+        .on("dblclick", iconDoubleClick)
+        .on("mousedown", iconMouseDown)
+        .on("mouseup", iconMouseUp);
+      span
+        .append("img")
+        .attr("src", "images/linkedin.png")
+        .attr("alt", "LinkedIn icon")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("class", "linkedin")
+        .attr("name", "LinkedIn")
+        .attr("data-url", "https://www.linkedin.com/")
+        .attr("data-IconPath", "images/linkedin.png")
+        .attr("data-altIconPath", "images/linkedin-black.png")
+        .on("mouseenter", mouseInIcon)
+        .on("mouseleave", mouseOutIcon)
+        .on("dblclick", iconDoubleClick)
+        .on("mousedown", iconMouseDown)
+        .on("mouseup", iconMouseUp);
+      span
+        .append("img")
+        .attr("src", "images/instagram.png")
+        .attr("alt", "Instagram icon")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("class", "instagram")
+        .attr("name", "Instagram")
+        .attr("data-url", "https://www.instagram.com/")
+        .attr("data-IconPath", "images/instagram.png")
+        .attr("data-altIconPath", "images/instagram-black.png")
+        .on("mouseenter", mouseInIcon)
+        .on("mouseleave", mouseOutIcon)
+        .on("dblclick", iconDoubleClick)
+        .on("mousedown", iconMouseDown)
+        .on("mouseup", iconMouseUp);
+
+      //Add required events for span
+      span.on("mousemove", function (event) {
+        const coords = d3.pointer(event);
+        d3.select(".mouse").html(`Mouse X: ${coords[0]}, Y: ${coords[1]}`);
+      });
+
+      //functions for mouse events
+      function mouseInIcon(event) {
+        d3.select(".in").html(`In: ${event.target.name}`);
+        this.style.opacity = 0.5;
+      }
+
+      function mouseOutIcon(event) {
+        //Ensure that icon changes back to original
+        this.src = this.dataset.iconpath;
+        d3.select(".out").html(`Out: ${event.target.name}`);
+        this.style.opacity = 1;
+      }
+
+      function iconDoubleClick() {
+        window.open(this.dataset.url, "_blank");
+      }
+
+      function iconMouseDown() {
+        this.src = this.dataset.alticonpath;
+      }
+
+      function iconMouseUp() {
+        this.src = this.dataset.iconpath;
+      }
+    </script>
+  </body>
+</html>
